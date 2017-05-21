@@ -1,0 +1,10 @@
+// MacOS-related exclusions
+.DS_Store
+
+// NodeJS-related exclusions
+datasets/
+node_modules/
+*.log
+
+// Password file excluded
+src/password.js
