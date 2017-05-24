@@ -1,3 +1,23 @@
+const writeJSONFile = () => {
+  const filename = './datasets/indexed.json';
+  fs.appendFileSync(filename, '{"words":{');
+  for (let idx in indexObject) {
+    fs.appendFileSync(filename, '"' + idx + '":[');
+    let comma = false;
+    for (let ref of indexObject[idx]) {
+      if (comma == true) {
+        fs.appendFileSync(filename, ',"' + ref + '"');
+      }
+      else {
+        fs.appendFileSync(filename, '"' + ref + '"');
+        comma = true;
+      }
+    }
+    fs.appendFileSync(filename, '],');
+  }
+  fs.appendFileSync(filename, '}}');
+}
+
 const indexWords = (type, primaryIdx, secondaryIdx, words) => {
   for (let word of words) {
     const ref = type + "-" + primaryIdx + "-" + secondaryIdx;
@@ -51,9 +71,6 @@ var indexObject = [];
 const main = () => {
   indexArtists();
   indexTracks();
-  const jsonIndexObj = {words : indexObject};
-  fs.writeFileSync('./datasets/indexed.json',
-    util.inspect(indexObject, {maxArrayLength: null, depth: null}),
-    'utf-8');
+  writeJSONFile();
 }
 main();
