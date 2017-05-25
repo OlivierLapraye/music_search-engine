@@ -5,7 +5,7 @@ const app = express()
 
 app.get('/', function (req, res) {
   const content = fs.readFileSync("./datasets/indexed.json");
-  res.send('La chine ça pue la merde');
+  res.send('Hello World');
 })
 
 app.listen(3000, function () {
