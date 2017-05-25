@@ -1,17 +1,22 @@
 @media (max-width: 600px) {
+  .header {
+    padding-top: 150px;
+  }
+
   .logo h2 {
     font-size: 25px;
   }
 
   .search_bar {
     margin: 0px;
+    margin-top: 30px;
   }
 
   .search_bar input {
     width: 80%;
-    font-size: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
   }
