@@ -1,6 +1,11 @@
 @media (max-width: 600px) {
   .header {
+    transition: padding-top 1.0s ease;
     padding-top: 150px;
+  }
+
+  .header--display_search {
+    padding-top: 10px;
   }
 
   .logo h2 {
