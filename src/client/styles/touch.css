@@ -25,4 +25,15 @@
     padding-left: 10px;
     padding-right: 10px;
   }
+
+  .results {
+    width: 99%;
+  }
+
+  .single_result {
+    max-width: 90%;
+    min-width: 300px;
+    margin: 0;
+    margin-bottom: 10px;
+  }
 }

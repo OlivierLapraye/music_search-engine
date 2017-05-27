@@ -10,6 +10,10 @@ class App extends React.Component {
     this.state = {results: []};
   }
 
+  backToVoid() {
+    this.setState({results: []});
+  }
+
   getReferences(search) {
     search = search.replace(/[{()}"',;]/g, '').toUpperCase();
     const searchWords = search.split(" ").filter((e) => {
@@ -73,17 +77,27 @@ class App extends React.Component {
           "title": artist.name,
           "subtitle": "Artist",
           "detail": "",
-          "image": artist.image[3]
+          "image": artist.image[3]['#text']
         }
         newResults.push(newObject);
       }
       else {
         const track = data.tracks.track[splitRef[2]];
+        const trackDuration = track.duration;
+        let duration = "0:00";
+        if (trackDuration != 0) {
+          const min = Math.floor(trackDuration / 60);
+          let sec = trackDuration % 60;
+          if (`${sec}`.length == 1) {
+            sec = "0" + sec;
+          }
+          duration = min + ":" + sec;
+        }
         const newObject = {
           "title": track.name,
-          "subtitle": track.artist.name,
-          "detail": track.duration,
-          "image": track.image[3]
+          "subtitle": "by " + track.artist.name,
+          "detail": duration,
+          "image": track.image[3]['#text']
         }
         newResults.push(newObject);
       }
@@ -107,7 +121,11 @@ class App extends React.Component {
     }
     return (
       <div>
-        <Header classes={additionalClassNames} onNewSearch={this.onNewSearch.bind(this)} />
+        <Header
+          onclick={this.backToVoid.bind(this)}
+          classes={additionalClassNames}
+          onNewSearch={this.onNewSearch.bind(this)}
+        />
         <div className="result_container">
           <Results results={this.state.results} />
         </div>
