@@ -5,7 +5,7 @@
   }
 
   .header--display_search {
-    padding-top: 10px;
+    padding-top: 20px;
   }
 
   .logo h2 {
@@ -13,8 +13,11 @@
   }
 
   .search_bar {
-    margin: 0px;
     margin-top: 30px;
+  }
+
+  .search_bar--display_search {
+    margin-top: 10px;
   }
 
   .search_bar input {

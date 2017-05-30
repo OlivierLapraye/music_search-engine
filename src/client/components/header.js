@@ -7,13 +7,19 @@ class Header extends React.Component {
   }
 
   render() {
-    const classes = "header " + this.props.classes;
+    let classes = "header";
+    if (this.props.classes != "") {
+      classes += " header" + this.props.classes;
+    }
     return (
       <div className={classes}>
         <div onClick={this.props.onclick} className="logo">
           <h2>Music Search Engine</h2>
         </div>
-        <SearchBar onNewSearch={this.props.onNewSearch} />
+        <SearchBar
+          additionalClassNames={this.props.classes}
+          onNewSearch={this.props.onNewSearch}
+        />
       </div>
     );
   }

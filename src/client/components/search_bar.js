@@ -18,8 +18,12 @@ class SearchBar extends React.Component {
   }
 
   render() {
+    let className = "search_bar";
+    if (this.props.additionalClassNames != "") {
+      className += " search_bar" + this.props.additionalClassNames;
+    }
     return (
-      <div className="search_bar">
+      <div className={className}>
         <input
           value={this.state.text}
           placeholder="Search for a track or an artist"

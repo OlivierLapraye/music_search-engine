@@ -115,7 +115,7 @@ class App extends React.Component {
   }
 
   render() {
-    let additionalClassNames = "header--display_search";
+    let additionalClassNames = "--display_search";
     if (this.state.results.length < 1) {
       additionalClassNames = "";
     }
