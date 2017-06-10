@@ -51,5 +51,8 @@ write the CSS by myself. For the CSS, I tried to stand to the
 ["mostly reasonable approch to CSS and Sass" of Airbnb](https://github.com/airbnb/css), even
 if I don't use Sass.
 
-## Installation
-Installation details are coming soon.
+## Screenshots
+
+![Music Search Engine](http://i.imgur.com/xwcRhfS.png "Home")
+
+![Music Search Engine](http://i.imgur.com/WG3CVZN.jpg "Vince Staples Search")
